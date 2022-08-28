@@ -1,0 +1,16 @@
+class Figura2D {
+Color colorRelleno;
+public:
+Figura2D() : colorRelleno(NINGUNO) {}
+Figura2D(Color c) : colorRelleno(c) {}
+Figura2D(const Figura2D& f)
+: colorRelleno(f.colorRelleno) {}
+...};
+class Circulo : Figura2D {
+double radio;
+public:
+Circulo() : radio(1.0) {} //llamada implícita a Figura2D()
+Circulo(Color col, double r) : Figura2D(col), radio(r) {}
+Circulo(const Circulo& cir)
+: Figura2D(cir), radio(cir.radio) {}
+...};
